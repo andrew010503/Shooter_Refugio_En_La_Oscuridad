@@ -265,6 +265,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 341528630}
   sonidoDisparo: {fileID: 8300000, guid: 2930691e83358d34ab59598fbb5cc013, type: 3}
+--- !u!114 &341528633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341528627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8652b5ad5691246b04f1c9dc750b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 341528630}
+  pasos:
+  - {fileID: 8300000, guid: 69a0616740a487e458876ca3becd0a25, type: 3}
+  - {fileID: 8300000, guid: 69a0616740a487e458876ca3becd0a25, type: 3}
+  pasoIntervalo: 0.5
+--- !u!143 &341528634
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341528627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &341528635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341528627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c358a7bd764aafc468461a450343066f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 341528630}
+  "sonidoDa\xF1o": {fileID: 8300000, guid: 44fc08ceaf0cce541953c4fddbc0abcd, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +771,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
       insertIndex: -1
       addedObject: {fileID: 341528631}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 341528633}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 341528634}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 341528635}
   m_SourcePrefab: {fileID: 100100000, guid: 60118bc059580af4084b194974575627, type: 3}
 --- !u!1 &1800881636
 GameObject:
