@@ -14,7 +14,6 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private float fireRate = 0.09f;
     [SerializeField] private float shootBlendTime = 0.075f;
     [SerializeField] private string shootStateName = "Fire_Rifle";
-    [SerializeField] private AudioClip shootSound;
     [SerializeField] private ParticleSystem muzzleFlash;
     private bool canShoot = true;
 
@@ -37,6 +36,10 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private float crosshairScaleSpeed = 8f;
     [SerializeField] private float aimingCrosshairScale = 0.8f;
     private Vector3 defaultCrosshairScale;
+
+    // 🆕 Nuevo campo: referencia al script que maneja el audio
+    [Header("Audio")]
+    public Audio_Disparo audioDisparo;
 
     private void Start()
     {
@@ -61,7 +64,7 @@ public class WeaponHandler : MonoBehaviour
         bool shootInp = Input.GetButton("Fire1");
 
         anim.SetBool("Aiming", Aiming);
-        controller.Strafe = Aiming; // 👈 Ahora funciona
+        controller.Strafe = Aiming;
 
         Vector3 targetPos = Aiming ? aimOffset : defaultLocalPos;
         cameraFollowTarget.localPosition = Vector3.Lerp(
@@ -101,8 +104,15 @@ public class WeaponHandler : MonoBehaviour
     {
         if (!canShoot) return;
 
-        if (shootSound != null)
-            AudioSource.PlayClipAtPoint(shootSound, transform.position);
+        // 🆕 Llamamos al script de audio si está asignado
+        if (audioDisparo != null)
+        {
+            audioDisparo.Disparar();
+        }
+        else
+        {
+            Debug.LogWarning("No se asignó el componente Audio_Disparo en WeaponHandler.");
+        }
 
         if (muzzleFlash != null)
             muzzleFlash.Play();
@@ -125,6 +135,7 @@ public class WeaponHandler : MonoBehaviour
     }
 }
 
+// 🔹 Mantiene igual el comportamiento del proyectil
 public class ProjectileMover : MonoBehaviour
 {
     private Vector3 direction;

@@ -139,7 +139,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2930691e83358d34ab59598fbb5cc013, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.23
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -232,11 +232,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 341528627}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c1261c50e8d4f4cba80921b579d030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraFollowTarget: {fileID: 0}
+  fireRate: 0.09
+  shootBlendTime: 0.075
+  shootStateName: Fire_Rifle
+  muzzleFlash: {fileID: 0}
+  muzzleSocket: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 40
+  cameraTransitionSpeed: 7
+  ikTransitionSpeed: 10
+  aimIK: {fileID: 0}
+  aimOffset: {x: 0.5, y: 1.5, z: -0.5}
+  crosshair: {fileID: 0}
+  crosshairScaleSpeed: 8
+  aimingCrosshairScale: 0.8
+  audioDisparo: {fileID: 341528632}
+--- !u!114 &341528632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341528627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb0e1eb6402205428b5b7c98d7caa7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 341528630}
-  disparoClip: {fileID: 0}
+  sonidoDisparo: {fileID: 8300000, guid: 2930691e83358d34ab59598fbb5cc013, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,6 +708,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
       insertIndex: -1
       addedObject: {fileID: 341528630}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 341528632}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60118bc059580af4084b194974575627, type: 3}
       insertIndex: -1
       addedObject: {fileID: 341528631}

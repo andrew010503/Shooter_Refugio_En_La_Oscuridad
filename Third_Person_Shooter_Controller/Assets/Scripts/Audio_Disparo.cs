@@ -1,21 +1,27 @@
-using UnityEngine; // Esto siempre debe estar al principio
+using UnityEngine;
 
 public class Audio_Disparo : MonoBehaviour
 {
-    // Asignaremos esto desde el Inspector
-    public AudioSource audioSource;
-    public AudioClip disparoClip;
+    [Header("Configuración de Audio")]
+    public AudioSource audioSource;    // El componente AudioSource del personaje
+    public AudioClip sonidoDisparo;    // El sonido que se reproducirá al disparar
 
-    // Método para reproducir el sonido
+    // 🔊 Método que reproduce el sonido del disparo
     public void Disparar()
     {
-        if (audioSource != null && disparoClip != null)
+        if (audioSource == null)
         {
-            audioSource.PlayOneShot(disparoClip); // Reproduce el clip
+            Debug.LogWarning("⚠️ No hay AudioSource asignado en Audio_Disparo.");
+            return;
         }
-        else
+
+        if (sonidoDisparo == null)
         {
-            Debug.LogWarning("AudioSource o AudioClip no asignado");
+            Debug.LogWarning("⚠️ No hay AudioClip asignado en Audio_Disparo.");
+            return;
         }
+
+        // Reproduce el sonido una sola vez (sin necesidad de que esté en loop)
+        audioSource.PlayOneShot(sonidoDisparo);
     }
 }
